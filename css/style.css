@@ -1,0 +1,104 @@
+body{
+    /* background: #4c5847; */
+    background-image: url(./fond.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   }
+
+nav{
+    /* justify-content: center; */
+    /* position: fixed; */
+    display: flex;
+    background-color: rgb(231, 73, 73);
+    /* width: 100%; */
+    justify-content: center;
+    /* z-index: 2; */
+}
+
+
+.container{
+    /* width:30%; */
+    justify-content: center;
+    margin:0 auto;
+    margin-top:5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   }
+
+   /* Bordered form */
+   form {
+    display: flex;
+    flex-direction: column;    
+    width:30%;
+    padding: 30px;
+    border: 1px solid #f1f1f1;
+    border-radius: 2em;
+    background: rgb(255, 255, 255,0.5);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+   }
+   table {
+    margin: auto;
+    width:60%;
+    /* border-radius: 2em; */
+    background: rgb(255, 255, 255,0.5);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border-collapse: collapse;
+    text-align: center;
+   }
+
+th, td {
+    border: 1px solid;
+}
+
+
+   .container h2{
+    /* width: 38%; */
+    margin: 0 auto;
+    padding-bottom: 10px;
+   }
+   
+   /* Full-width inputs */
+   input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+   }
+   
+   /* Set a style for all buttons */
+   button, button a{
+    background-color: #53af57;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    /* width: 100%; */
+   }
+   button:hover, button a:hover {
+    background-color: white;
+    color: #53af57;
+    /* border: 1px solid #53af57; */
+   }
+
+   /* button a{
+    background-color: #53af57;
+    text-decoration: none;
+    color: white;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+   } */
+   /* button a:hover {
+    background-color: white;
+    text-decoration: none;
+    color: #53af57;
+    border: none;
+   } */
+
+
+   
