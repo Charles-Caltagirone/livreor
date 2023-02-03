@@ -1,4 +1,5 @@
 body{
+    margin: 0;
     /* background: #4c5847; */
     background-image: url(../ASSETS/fond.jpg);
     background-position: center;
@@ -23,7 +24,7 @@ nav a{
     /* width:30%; */
     justify-content: center;
     margin:0 auto;
-    margin-top:5%;
+    margin-top:2%;
     display: flex;
     flex-direction: column;
     align-items: center;

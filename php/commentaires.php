@@ -36,7 +36,7 @@ require('config.php');
 <?php
 // var_dump($_SESSION);
 
-if ($_SESSION['user'][0]['login'] != 'login') {
+if (!$_SESSION['user'][0]['login']) {
     header("Location: ../index.php");
 }
 

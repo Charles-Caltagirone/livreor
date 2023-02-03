@@ -21,9 +21,9 @@
     <h1>
       <?php
       if (isset($_SESSION['user'][0]['login']) == null) {
-        echo 'Bonjour !';
+        echo 'Bienvenue !';
       } else {
-        echo ' Bienvenue à toi ' . $_SESSION['user'][0]['login'];
+        echo 'Bonjour ' . $_SESSION['user'][0]['login'] . ' !';
         // echo $_SESSION['login'];
       }
       ?>

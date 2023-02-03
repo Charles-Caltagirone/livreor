@@ -21,35 +21,11 @@ require('config.php');
         </nav>
     </header>
 
-    <!-- <form method="post" action="">
-        Message :<br />
-        <textarea name="commentaire" rows="8" cols="35"> </textarea> <br />
-        <input type="submit" value="Envoyer" />
-    </form> -->
-
 </body>
 
 </html>
 <?php
 
-// if (isset($_POST['commentaire']))
-
-//     if ($_POST['commentaire'] != NULL) // si le commentaire n'est pas vide  
-
-
-//     {
-//         /* On utilise htmlentities pour empecher les gens d'inserer du html,  
-// tout code html sera affiché en tant que code html, il ne sera pas interpreté. 
-// et ent_quotes pour convertir les guillemets doubles et les guillemets simples: 
-// il faut noter que c'est pour des raisons de securité qu'on a fait ainsi */
-//         $login = $_SESSION['user'][0]['login'];
-//         $commentaire = htmlentities($_POST['commentaire'], ENT_QUOTES);
-//         $requestate = date("Y/m/d H:i:s"); //cette fonction permet de savoir la date de l'envoi de commentaire 
-//         // $id_user = $_SESSION['user'][0]['id'];
-
-//         $result = $mysqli->query("SELECT utilisateurs.id, commentaires.id_utilisateur FROM utilisateurs INNER JOIN commentaires ON utilisateurs.id = commentaires.id_utilisateur");
-//         $result = $result->fetch_all(MYSQLI_ASSOC);
-//     }
 
 // On commence par compter le nombre totale des commentaires  
 $query = mysqli_query($conn, 'SELECT COUNT(*) FROM commentaires');
@@ -78,8 +54,8 @@ $nombreDePages  = ceil($totalDesMessages / 10);
 //Nous avons decidé d'utiliser un tableau pour afficher cette etiquette.  
 echo '<table width=100%>  
 <tr>  
-<th width=10% bgcolor=green>Pseudo</th>  
-<th width=10% bgcolor=green>Date</th>  
+<th width=15% bgcolor=green>Pseudo</th>  
+<th width=15% bgcolor=green>Date</th>  
 <th width=90% bgcolor=green>Message</font></th>  
 </tr>  
 </table>';
@@ -102,10 +78,10 @@ while ($request = mysqli_fetch_array($reponse)) {
 ?>
     <table class="table_livreor">
         <tr>
-            <td width=10% bgcolor=#6495ED>
+            <td width=15% bgcolor=#6495ED>
                 <?php echo '<b>' . $request['login'] . '</b>'; ?>
             </td>
-            <td width=10% bgcolor=#6495ED>
+            <td width=15% bgcolor=#6495ED>
                 <?php echo $request['date']; ?>
             </td>
             <td width=90% bgcolor=#cccccc class="comm">
