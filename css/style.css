@@ -1,6 +1,6 @@
 body{
     /* background: #4c5847; */
-    background-image: url(./fond.jpg);
+    background-image: url(../ASSETS/fond.jpg);
     background-position: center;
     background-attachment: fixed;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -15,7 +15,9 @@ nav{
     justify-content: center;
     /* z-index: 2; */
 }
-
+nav a{
+    padding: 1em;
+}
 
 .container{
     /* width:30%; */
@@ -29,6 +31,7 @@ nav{
 
    /* Bordered form */
    form {
+    margin: 2em auto;
     display: flex;
     flex-direction: column;    
     width:30%;
@@ -47,12 +50,16 @@ nav{
     border-collapse: collapse;
     text-align: center;
    }
-
+.comm{
+    max-width: 0;
+}
 th, td {
     border: 1px solid;
-}
-
-
+    word-wrap: break-word;
+    }
+    textarea{
+        resize: none;
+    }
    .container h2{
     /* width: 38%; */
     margin: 0 auto;
@@ -84,6 +91,23 @@ th, td {
     color: #53af57;
     /* border: 1px solid #53af57; */
    }
+.pages_count{
+border-width: 1px;
+display: flex;
+justify-content: center;
+padding: 1em 1em;
+color: green;
+}
+
+.pages_count a{
+    padding: 0 1em;
+    color: white;
+}
+
+.table_livreor{
+    opacity: 0.8;
+}
+
 
    /* button a{
     background-color: #53af57;
