@@ -8,7 +8,6 @@ if ($_SESSION['user'][0]['login'] != 'admin') {
     header("Location: index.php");
 }
 
-
 // On récupère tout le contenu de la table etudiants
 $sqlQuery = 'SELECT * FROM utilisateurs';
 $utilisateursStatement = $conn->query($sqlQuery);
