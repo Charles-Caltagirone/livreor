@@ -17,6 +17,8 @@ nav{
     /* z-index: 2; */
 }
 nav a{
+    text-decoration: none;
+    color: black;
     padding: 1em;
 }
 

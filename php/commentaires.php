@@ -20,50 +20,40 @@ require('config.php');
             <?php require 'header_menu.php'; ?>
         </nav>
     </header>
+    <div class="container">
 
-    <form method="post" action="">
-        <h2>Laisser un commentaire</h2>
-        Message :<br />
-        <textarea name="commentaire" rows="8" cols="35" autofocus> </textarea> <br />
-        <!-- <button type="submit" name="submit"><a href="livreor.php">Publier</a></button> -->
-        <button type="submit" value="Envoyer">Publier</button>
-    </form>
+        <form method="post" action="">
+            <h2>Laisser un commentaire</h2>
+            Message :<br />
+            <textarea name="commentaire" rows="8" cols="35" autofocus> </textarea> <br />
+            <!-- <button type="submit" name="submit"><a href="livreor.php">Publier</a></button> -->
+            <?php
+            // var_dump($_SESSION);
 
+            if (!$_SESSION['user'][0]['login']) {
+                header("Location: ../index.php");
+            }
+
+            if (isset($_POST['submit']))
+                $id_user = $_SESSION['user'][0]['id'];
+            $date = date("Y/m/d H:i:s"); //cette fonction permet de savoir la date de l'envoi de commentaire 
+            $commentaire = htmlentities($_POST['commentaire'], ENT_QUOTES);
+            $commentaire = nl2br($commentaire); // nl2br insère un retour à la ligne HTML à chaque nouvelle ligne  
+
+            if (!empty($commentaire)) // si le commentaire est vide  
+
+            {
+                mysqli_query($conn, "INSERT INTO commentaires (commentaire, id_utilisateur, date) VALUES('$commentaire','$id_user', '$date')");
+
+                header("Location: livreor.php");
+            } else {
+                echo 'remplir';
+            }
+
+            ?>
+            <button name='submit' type="submit" value="Envoyer">Publier</button>
+        </form>
+    </div>
 </body>
 
 </html>
-
-<?php
-// var_dump($_SESSION);
-
-if (!$_SESSION['user'][0]['login']) {
-    header("Location: ../index.php");
-}
-
-if (isset($_POST['commentaire']))
-
-    if (empty($_POST['commentaire'])) // si le commentaire n'est pas vide  
-
-    {
-        echo 'remplir';
-    } else {
-        /* On utilise htmlentities pour empecher les gens d'inserer du html,  
-        tout code html sera affiché en tant que code html, il ne sera pas interpreté. 
-        et ent_quotes pour convertir les guillemets doubles et les guillemets simples: 
-        il faut noter que c'est pour des raisons de securité qu'on a fait ainsi */
-
-        $id_user = $_SESSION['user'][0]['id'];
-        $commentaire = htmlentities($_POST['commentaire'], ENT_QUOTES);
-        $commentaire = nl2br($commentaire); // nl2br insère un retour à la ligne HTML à chaque nouvelle ligne  
-        $date = date("Y/m/d H:i:s"); //cette fonction permet de savoir la date de l'envoi de commentaire 
-        // $request = $conn->query("INSERT INTO commentaires (commentaire, date) VALUES('$commentaire', '$date')");
-
-        mysqli_query($conn, "INSERT INTO commentaires (commentaire, id_utilisateur, date) VALUES('$commentaire','$id_user', '$date')");
-
-        // exemple du projet module-connexion
-        // $query = "INSERT INTO commentaires VALUES('','$commentaire','$date')";
-        // mysqli_query($conn, $query);
-        header("Location: livreor.php");
-    }
-
-?>
